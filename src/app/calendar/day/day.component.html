@@ -1,0 +1,187 @@
+<div class="daybox">
+  <h1>{{ dayTitle }}</h1>
+  <form #dayForm="ngForm">
+    <!-- <div class="form-group">
+      <label for="ismakingvideo"> Make Video This Day</label>
+      <input
+        type="checkbox"
+        id="ismakingvideo"
+        required
+        [(ngModel)]="videoContent.isMakingVideo"
+        name="ismakingvideo"
+      />
+    </div> -->
+    <section class="checkbox-area">
+      <label for="ismakingvideo"> Make Video This Day</label>
+      <mat-checkbox
+        class="check-margin"
+        matInput
+        required
+        [(ngModel)]="videoContent.isMakingVideo"
+        name="ismakingvideo"
+      >
+      </mat-checkbox>
+    </section>
+
+    <div *ngIf="videoContent.isMakingVideo">
+      <mat-divider class="divider"></mat-divider>
+      <div class="zoober-form">
+        <section class="checkbox-area">
+          <label for="iscomment">Comment Episode</label>
+          <mat-checkbox
+            class="check-margin"
+            matInput
+            required
+            [(ngModel)]="videoContent.iscomment"
+            name="iscomment"
+          >
+          </mat-checkbox>
+        </section>
+        <div class="form-group" *ngIf="!videoContent.iscomment">
+          <label for="sub">Subreddit</label>
+          <input
+            type="text"
+            class="form-control"
+            id="sub"
+            required
+            [(ngModel)]="videoContent.subreddit"
+            name="sub"
+            #sub="ngModel"
+          />
+        </div>
+        <div *ngIf="videoContent.iscomment" class="comment-posts">
+          <div class="form-group">
+            <label for="sub">Comment Posts</label>
+            <button
+              (click)="onAdd()"
+              mat-raised-button
+              class="success comment-button check-margin"
+            >
+              Add
+            </button>
+
+            <input
+              type="text"
+              class="form-control"
+              id="sub"
+              required
+              [(ngModel)]="addingText"
+              name="sub"
+              #sub="ngModel"
+            />
+          </div>
+          <div class="form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Posts</mat-label>
+              <textarea
+                matInput
+                disabled
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="5"
+                >{{ getCommentString() }}</textarea
+              >
+            </mat-form-field>
+          </div>
+          <button
+            (click)="onPop()"
+            mat-raised-button
+            class="comment-button check-margin"
+            color="accent"
+          >
+            Pop
+          </button>
+          <button
+            (click)="onReset()"
+            mat-raised-button
+            color="warn"
+            class="comment-button check-margin"
+          >
+            Reset
+          </button>
+        </div>
+
+        <div class="form-group" *ngIf="!videoContent.iscomment">
+          <label for="clipnum">Clips Per Video</label>
+          <input
+            type="number"
+            min="0"
+            class="form-control"
+            id="clipnum"
+            name="clipnum"
+            required
+            [(ngModel)]="videoContent.numberOfClips"
+            #clipnum="ngModel"
+          />
+        </div>
+        <div class="form-group" *ngIf="videoContent.iscomment">
+          <label for="clipnum">Comments Per Subreddit</label>
+          <input
+            type="number"
+            min="0"
+            class="form-control"
+            id="clipnum"
+            name="clipnum"
+            required
+            [(ngModel)]="videoContent.clipsPerSub"
+            #clipnum="ngModel"
+          />
+        </div>
+        <div class="form-group">
+          <label for="vidnum">Episode Number</label>
+          <input
+            type="number"
+            min="0"
+            class="form-control"
+            id="vidnum"
+            required
+            [(ngModel)]="videoContent.videoNumber"
+            name="vidnum"
+            #vidnum="ngModel"
+          />
+        </div>
+        <mat-divider class="divider"></mat-divider>
+
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            required
+            [(ngModel)]="videoContent.title"
+            name="title"
+            #title="ngModel"
+          />
+        </div>
+        <div class="form-group">
+          <label for="desc">Description</label>
+          <textarea
+            type="text"
+            class="form-control"
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="2"
+            cdkAutosizeMaxRows="6"
+            >{{ videoContent.descrption }}</textarea
+          >
+          <!-- <mat-form-field
+            id="desc"
+            appearance="fill"
+            class="reduce-bottom-margin"
+          >
+            <textarea
+              matInput
+              cdkTextareaAutosize
+              #autosize="cdkTextareaAutosize"
+              cdkAutosizeMinRows="1"
+              cdkAutosizeMaxRows="5"
+              >{{ this.videoContent.descrption }}</textarea
+            >
+          </mat-form-field> -->
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

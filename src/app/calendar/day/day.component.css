@@ -1,0 +1,46 @@
+@import url("https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css");
+
+.daybox {
+  /* width: 30px;
+  height: 30px; */
+  padding: 10px;
+  border: 4px solid gray;
+}
+
+.checkbox-area {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.check-margin {
+  margin: 0 10px;
+}
+
+.zoober-form {
+  margin-top: 5px;
+}
+
+.success {
+  background-color: green;
+  color: #fff;
+}
+
+.comment-button {
+  font-size: 14px;
+  line-height: 20px;
+  height: auto;
+  width: auto;
+}
+
+::ng-deep .mat-form-field-wrapper {
+  margin-bottom: -1.9em;
+}
+
+.comment-posts {
+  margin-bottom: 10px;
+}
+
+.divider {
+  margin-bottom: 10px;
+}

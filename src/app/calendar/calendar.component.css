@@ -1,0 +1,10 @@
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.day-container {
+  margin: 10px 10px;
+  width: fit-content;
+  min-width: 230px;
+}

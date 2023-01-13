@@ -1,0 +1,9 @@
+<h1>New Videos</h1>
+<div class="flex-container">
+  <app-day
+    class="day-container"
+    *ngFor="let day of daysOfWeek; let i = index"
+    [dayTitle]="day"
+    [videoContent]="videoData[i]"
+  ></app-day>
+</div>
