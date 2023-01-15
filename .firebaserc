@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "zoobermedia-47626": {
+      "hosting": {
+        "angular-crud": [
+          "zoobermedia-47626"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "zoobermedia-47626"
+  }
+}

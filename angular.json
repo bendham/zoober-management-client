@@ -103,6 +103,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "angular-crud:build:production",
+            "firebaseProject": "zoobermedia-47626",
+            "firebaseHostingSite": "zoobermedia-47626"
+          }
         }
       }
     }

@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UsersService {
-  private baseURL = `http://localhost:3000/api`;
+  private baseURL = `http://api.zoobermedia.com`;
 
   constructor(private http: HttpClient) {}
 
   getAllData(): Observable<any> {
-    return this.http.get(`${this.baseURL}/getAll`);
+    return this.http.get(`${this.baseURL}/getall`);
   }
 
   postData(data: any): Observable<any> {
