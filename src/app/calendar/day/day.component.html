@@ -11,18 +11,19 @@
         name="ismakingvideo"
       />
     </div> -->
-    <section class="checkbox-area">
-      <label for="ismakingvideo"> Make Video This Day</label>
-      <mat-checkbox
-        class="check-margin"
-        matInput
-        required
-        [(ngModel)]="videoContent.isMakingVideo"
-        name="ismakingvideo"
-      >
-      </mat-checkbox>
-    </section>
-
+    <div *ngIf="hasMakeVideoThisDay">
+      <section class="checkbox-area">
+        <label for="ismakingvideo"> Make Video This Day</label>
+        <mat-checkbox
+          class="check-margin"
+          matInput
+          required
+          [(ngModel)]="videoContent.isMakingVideo"
+          name="ismakingvideo"
+        >
+        </mat-checkbox>
+      </section>
+    </div>
     <div *ngIf="videoContent.isMakingVideo">
       <mat-divider class="divider"></mat-divider>
       <div class="zoober-form">

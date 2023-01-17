@@ -26,4 +26,11 @@ export class AppComponent {
       console.log(response);
     });
   }
+
+  makeSingleVideo(video: any) {
+    console.log(video);
+    this.userService.makeVideo(video).subscribe((resp) => {
+      console.log(resp);
+    });
+  }
 }

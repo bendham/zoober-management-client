@@ -17,9 +17,16 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { MatCardModule } from '@angular/material/card';
 import { ThumbnailDisplayerComponent } from './thumbnail-displayer/thumbnail-displayer.component';
+import { MakeSingleVideoComponent } from './make-single-video/make-single-video.component';
 
 @NgModule({
-  declarations: [AppComponent, CalendarComponent, DayComponent, ThumbnailDisplayerComponent],
+  declarations: [
+    AppComponent,
+    CalendarComponent,
+    DayComponent,
+    ThumbnailDisplayerComponent,
+    MakeSingleVideoComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

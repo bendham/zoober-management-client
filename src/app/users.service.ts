@@ -1,17 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { VideoModel } from 'src/shared/video.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UsersService {
-  private baseURL = `http://api.zoobermedia.com`;
+  private baseURL = `https://api.zoobermedia.com`;
+  // private baseURL = `http://localhost:3000`;
 
   constructor(private http: HttpClient) {}
 
   getAllData(): Observable<any> {
     return this.http.get(`${this.baseURL}/getall`);
+  }
+
+  makeVideo(videoData: VideoModel): Observable<any> {
+    return this.http.post(`${this.baseURL}/makevideo`, videoData);
   }
 
   postData(data: any): Observable<any> {

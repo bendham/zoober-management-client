@@ -8,3 +8,8 @@
   width: fit-content;
   min-width: 230px;
 }
+
+.success {
+  background-color: green;
+  color: #fff;
+}

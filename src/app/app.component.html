@@ -1,6 +1,12 @@
-<app-calendar [videoData]="data.videos"></app-calendar>
-<button mat-button class="success" (click)="updateData()">Make Changes</button>
+<app-calendar
+  [videoData]="data.videos"
+  (updateData)="updateData()"
+></app-calendar>
 
 <app-thumbnail-displayer
   [thumbnails]="data.thumbnails"
 ></app-thumbnail-displayer>
+
+<app-make-single-video
+  (makeVideo)="makeSingleVideo($event)"
+></app-make-single-video>

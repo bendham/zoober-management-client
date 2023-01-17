@@ -1,4 +1,4 @@
-<h1>New Videos</h1>
+<h1>Video Schedule</h1>
 <div class="flex-container">
   <app-day
     class="day-container"
@@ -7,3 +7,6 @@
     [videoContent]="videoData[i]"
   ></app-day>
 </div>
+<button mat-button class="success" (click)="updateDataEvent()">
+  Make Changes
+</button>

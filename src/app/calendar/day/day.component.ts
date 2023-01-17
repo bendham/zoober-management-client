@@ -10,6 +10,7 @@ import { VideoModel } from '../../../shared/video.model';
 export class DayComponent implements OnInit {
   @Input() dayTitle: string = '';
   @Input() videoContent: VideoModel = new defaults.defaultVideo();
+  @Input() hasMakeVideoThisDay: boolean = true;
 
   addingText = '';
 

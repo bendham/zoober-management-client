@@ -1,7 +1,7 @@
 export class defaultVideo {
   isMakingVideo = true;
   dayOfWeek = 0;
-  iscomment = true;
+  iscomment = false;
   subreddit = 'contagiouslaughter';
   numberOfClips = 50;
   videoNumber = 10;
