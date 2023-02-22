@@ -165,8 +165,10 @@
             #autosize="cdkTextareaAutosize"
             cdkAutosizeMinRows="2"
             cdkAutosizeMaxRows="6"
-            >{{ videoContent.descrption }}</textarea
-          >
+            [(ngModel)]="videoContent.descrption"
+            name="descrption"
+            #descrption="ngModel"
+          ></textarea>
           <!-- <mat-form-field
             id="desc"
             appearance="fill"
