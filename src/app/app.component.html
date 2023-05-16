@@ -7,6 +7,16 @@
   [thumbnails]="data.thumbnails"
 ></app-thumbnail-displayer>
 
-<app-make-single-video
-  (makeVideo)="makeSingleVideo($event)"
-></app-make-single-video>
+<div class="flex-container">
+  <app-make-single-video
+    class="container"
+    [newVideoTitle]="'Make Video'"
+    (makeVideo)="makeSingleVideo($event)"
+  ></app-make-single-video>
+  <app-make-single-video
+    class="container"
+    [newVideoTitle]="'Make Thumbnails'"
+    [type]="'thumbnail'"
+    (makeThumbnail)="makeThumbnails($event)"
+  ></app-make-single-video>
+</div>

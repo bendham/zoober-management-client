@@ -2,7 +2,8 @@
   [dayTitle]="newVideoTitle"
   [videoContent]="curVideo"
   [hasMakeVideoThisDay]="false"
+  [type]="type"
 ></app-day>
-<button mat-button class="success" (click)="makeVideoEvent()">
-  Make Single Video
+<button mat-button class="success" (click)="videoEvent()">
+  {{ button_str }}
 </button>

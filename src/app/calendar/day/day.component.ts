@@ -11,12 +11,16 @@ export class DayComponent implements OnInit {
   @Input() dayTitle: string = '';
   @Input() videoContent: VideoModel = new defaults.defaultVideo();
   @Input() hasMakeVideoThisDay: boolean = true;
+  @Input() type: string = 'video';
 
   addingText = '';
+  isTypeVideo = true;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isTypeVideo = this.type === 'video';
+  }
 
   getCommentString() {
     return this.videoContent.commentSubreddits

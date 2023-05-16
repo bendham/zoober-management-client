@@ -20,6 +20,10 @@ export class UsersService {
     return this.http.post(`${this.baseURL}/makevideo`, videoData);
   }
 
+  makeThumbnail(videoData: VideoModel): Observable<any> {
+    return this.http.post(`${this.baseURL}/makethumbnail`, videoData);
+  }
+
   postData(data: any): Observable<any> {
     return this.http.post(`${this.baseURL}/post`, data);
   }

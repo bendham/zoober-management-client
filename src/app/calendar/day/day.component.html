@@ -27,7 +27,7 @@
     <div *ngIf="videoContent.isMakingVideo">
       <mat-divider class="divider"></mat-divider>
       <div class="zoober-form">
-        <section class="checkbox-area">
+        <section *ngIf="isTypeVideo" class="checkbox-area">
           <label for="iscomment">Comment Episode</label>
           <mat-checkbox
             class="check-margin"
@@ -104,7 +104,11 @@
         </div>
 
         <div class="form-group" *ngIf="!videoContent.iscomment">
-          <label for="clipnum">Clips Per Video</label>
+          <label for="clipnum"
+            >{{
+              isTypeVideo ? "Num Clips Per Video" : "Num Clips For Thumbnails"
+            }}
+          </label>
           <input
             type="number"
             min="0"
@@ -142,47 +146,50 @@
             #vidnum="ngModel"
           />
         </div>
-        <mat-divider class="divider"></mat-divider>
 
-        <div class="form-group">
-          <label for="title">Title</label>
-          <input
-            type="text"
-            class="form-control"
-            id="title"
-            required
-            [(ngModel)]="videoContent.title"
-            name="title"
-            #title="ngModel"
-          />
-        </div>
-        <div class="form-group">
-          <label for="desc">Description</label>
-          <textarea
-            type="text"
-            class="form-control"
-            cdkTextareaAutosize
-            #autosize="cdkTextareaAutosize"
-            cdkAutosizeMinRows="2"
-            cdkAutosizeMaxRows="6"
-            [(ngModel)]="videoContent.descrption"
-            name="descrption"
-            #descrption="ngModel"
-          ></textarea>
-          <!-- <mat-form-field
-            id="desc"
-            appearance="fill"
-            class="reduce-bottom-margin"
-          >
+        <div *ngIf="isTypeVideo">
+          <mat-divider class="divider"></mat-divider>
+
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              required
+              [(ngModel)]="videoContent.title"
+              name="title"
+              #title="ngModel"
+            />
+          </div>
+          <div class="form-group">
+            <label for="desc">Description</label>
             <textarea
-              matInput
+              type="text"
+              class="form-control"
               cdkTextareaAutosize
               #autosize="cdkTextareaAutosize"
-              cdkAutosizeMinRows="1"
-              cdkAutosizeMaxRows="5"
-              >{{ this.videoContent.descrption }}</textarea
+              cdkAutosizeMinRows="2"
+              cdkAutosizeMaxRows="6"
+              [(ngModel)]="videoContent.descrption"
+              name="descrption"
+              #descrption="ngModel"
+            ></textarea>
+            <!-- <mat-form-field
+              id="desc"
+              appearance="fill"
+              class="reduce-bottom-margin"
             >
-          </mat-form-field> -->
+              <textarea
+                matInput
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="5"
+                >{{ this.videoContent.descrption }}</textarea
+              >
+            </mat-form-field> -->
+          </div>
         </div>
       </div>
     </div>

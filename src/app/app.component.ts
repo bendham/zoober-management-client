@@ -33,4 +33,11 @@ export class AppComponent {
       console.log(resp);
     });
   }
+
+  makeThumbnails(video: any) {
+    console.log(video);
+    this.userService.makeThumbnail(video).subscribe((resp) => {
+      console.log(resp);
+    });
+  }
 }
